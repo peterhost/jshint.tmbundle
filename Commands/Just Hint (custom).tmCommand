@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>INIT_SCRIPT=$(cat &lt;&lt;EOF
+    tmJSHINT({
+
+	    "node" : true,
+	    "es5" : true,
+	    "browser" : true,
+
+	    "boss" : false,
+	    "curly": false,
+	    "debug": false,
+	    "devel": false,
+	    "eqeqeq": true,
+	    "evil": false,
+	    "forin": false,
+	    "immed": true,
+	    "laxbreak": false,
+	    "newcap": true,
+	    "noarg": true,
+	    "noempty": false,
+	    "nonew": false,
+	    "nomen": false,
+	    "onevar": true,
+	    "plusplus": false,
+	    "regexp": false,
+	    "undef": true,
+	    "sub": true,
+	    "strict": false,
+	    "white": true
+	      predef: [
+	        	// CommonJS
+	        	"exports",
+	       	 "require",
+	        	"module",
+	        	// NodeJS
+	  		"GLOBAL",
+	        	"process",
+        		"__filename",
+        		"__dirname",
+	   		// Jasmine
+        		"jasmine",
+        		"spyOn",
+        		"it",
+        		"describe",
+        		"expect",
+	   		// Should.js
+	    		"should"
+      	]
+    });
+EOF
+)
+
+sh "$TM_BUNDLE_SUPPORT/jshint-tm.sh" "$INIT_SCRIPT"
+
+
+
+
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@l</string>
+	<key>name</key>
+	<string>Just Hint (custom)</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.js</string>
+	<key>uuid</key>
+	<string>A47C3A20-192F-401B-B764-0E3882B5C3DC</string>
+</dict>
+</plist>
